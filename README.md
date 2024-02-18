@@ -6,7 +6,7 @@ Quasic is a single-cell RNA-seq quantification framework that considers the pote
 
 Workflow of Quasic:
 
-![image](https://hackmd.io/_uploads/Bycojqk3a.png)
+![image](https://imgur.com/cpLh7Op)
 
 Three main steps are included in Quasic:
 
@@ -66,7 +66,7 @@ salmon index -t [transcripts_fasta_path] -i [transcripts_index_name]
 
 * Required
 	* **-1 [inputR1]** : Input scRNA-seq R1 fastq reads。
-	* **-2 [inputR2] **: Input scRNA-seq R2 fastq reads。
+	* **-2 [inputR2]**: Input scRNA-seq R2 fastq reads。
 	* **-i [transcripts_index_name]** : Salmon index directory built by salmon index。See `data/salmon_index_filtered`.
 	* **-o [output_dir]** : Output directory path
 	* **--tgMap [transcript_to_gene_map]** : Mapping file for transcript and gene. See `data/txp2gene.tsv`.

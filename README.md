@@ -6,7 +6,7 @@ Quasic is a single-cell RNA-seq quantification framework that considers the pote
 
 Workflow of Quasic:
 
-![image](https://imgur.com/cpLh7Op)
+![image](https://hackmd.io/_uploads/Bycojqk3a.png)
 
 Three main steps are included in Quasic:
 

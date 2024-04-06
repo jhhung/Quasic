@@ -55,6 +55,7 @@ salmon index -t [transcripts_fasta_path] -i [transcripts_index_name]
 	-i [transcripts_index_name] \
 	-o [output_dir] \
 	--tgMap [transcript_to_gene_map] \
+	--quasic_r_path [quasic_R_dir] \
 	-p [thread_num] \
 	--regularization_parameter [regularization_intensity] \
 	--rare_gene_cut_off [rare_gene_threshold] \
@@ -70,6 +71,7 @@ salmon index -t [transcripts_fasta_path] -i [transcripts_index_name]
 	* **-i [transcripts_index_name]** : Salmon index directory built by salmon index。See `data/salmon_index_filtered`.
 	* **-o [output_dir]** : Output directory path
 	* **--tgMap [transcript_to_gene_map]** : Mapping file for transcript and gene. See `data/txp2gene.tsv`.
+	* **--quasic_r_path [quasic_R_dir]** : R directory of quasic, Ex. Quasic/R.
 * Option
 	* **-p [thread_num] (default = 1)**: Number of using thread.
 	* **--regularization_parameter [regularization_intensity] (default = 0.01)** : Intensity of subpopulation constraints. The value should be set between 0.0 and 1.0. Higher intensity represent the gene expression profile for each cell may close to its corresponding cell type signature.

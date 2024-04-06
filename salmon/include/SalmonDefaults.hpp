@@ -2,6 +2,7 @@
 #define SALMON_DEFAULTS_HPP
 
 #include <thread>
+#include <string>
 
 namespace salmon {
 namespace defaults {

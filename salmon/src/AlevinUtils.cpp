@@ -941,6 +941,7 @@ namespace alevin {
       aopt.regularization_parameter = vm["regularization_parameter"].as<double>();
       aopt.rare_gene_cut_off = vm["rare_gene_cut_off"].as<double>();
 			aopt.cluster_resolution = vm["cluster_resolution"].as<double>();
+			aopt.quasic_r_path = vm["quasic_r_path"].as<std::string>();
 
       if (vm.count("geneBlacklist")){
         aopt.geneBlacklistFile = vm["geneBlacklist"].as<std::string>();

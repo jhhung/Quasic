@@ -1,4 +1,4 @@
-source("R/tximport/alevin.R")
+#source("R/tximport/alevin.R")
 
 #' Tximport package: import transcript-level quantification data
 #' 
@@ -269,7 +269,7 @@ tximport <- function(files,
                      sparse=FALSE,
                      sparseThreshold=1,
                      readLength=75,
-                     alevinArgs=NULL, em_iter=50) {
+                     alevinArgs=NULL, em_iter=50, r_path=NULL) {
   
   # inferential replicate importer
   infRepImporter <- NULL
@@ -322,7 +322,7 @@ tximport <- function(files,
     if (compareVersion(getAlevinVersion(files), "0.14.0") == -1) {
       stop("use of tximport version >= 1.18 requires alevin version >= 0.14")
     }
-    mat <- readAlevin(files, dropInfReps, filterBarcodes, tierImport, forceSlow, dropMeanVar, em_iter)
+    mat <- readAlevin(files, dropInfReps, filterBarcodes, tierImport, forceSlow, dropMeanVar, em_iter, r_path)
     # if 'mat' is not a list, it is a matrix with the counts
     if (!is.list(mat)) {
       txi <- list(abundance=NULL, counts=mat)

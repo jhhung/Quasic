@@ -143,6 +143,8 @@ struct AlevinOpts {
 
   uint32_t totalDedupUMIs;
   uint32_t totalExpGenes;
+
+	std::string quasic_r_path;
 };
 
 #endif // ALEVIN_OPTS_HPP

@@ -1,9 +1,11 @@
 #/bin/bash
 
 iter=$1
-input_dir=$2$1
+#input_dir=$2$1
+input_dir=$2/../quasic$1
 output_dir=$2/R_output
 cluster_resolution=$3
+quasic_r_path=$4
 
 echo "---------------------------"
 echo "Run Seurat at $1 iteration"
@@ -30,7 +32,7 @@ if  [ ! -f "$2/quants_mat_cols.txt" ]; then
 	exit 0
 fi
 
-Rscript R/runSeurat.R $input_dir/quants_mat.gz $iter $output_dir $cluster_resolution
+Rscript ${quasic_r_path}/runSeurat.R $input_dir/quants_mat.gz $iter $output_dir $cluster_resolution $quasic_r_path
 
 if [ $? -eq 1 ]; then
 	echo "ERROR: Something wrong in Seurat"

@@ -527,6 +527,9 @@ namespace salmon {
        "cluster_resolution",po::value<double>()->default_value(alevin::defaults::cluster_resolution),
        "define the resolution of clustering.")
       (
+       "quasic_r_path",po::value<std::string>(),
+       "R path of Quasic.")
+      (
        "geneBlacklist",po::value<std::string>(),
        "Genes with no subpopulation-constraint.");
     return alevinspec;

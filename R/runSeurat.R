@@ -1,12 +1,15 @@
 library(Seurat)
-source("R/tximport/tximport.R")
 args <- commandArgs(trailingOnly = TRUE)
+#tximport_path = args[5] +  "tximport/tximport.R"
+print(args[5])
+source(file.path(args[5], "tximport/tximport.R"))
+source(file.path(args[5], "tximport/alevin.R"))
 files <- file.path(args[1])
 iter = args[2]
 setwd(args[3])
 cluster_resolution = args[4]
 file.exists(files)
-txi <- tximport(files, type="alevin", em_iter = iter)
+txi <- tximport(files, type="alevin", em_iter = iter, r_path = args[5])
 sample <- CreateSeuratObject(counts = txi$counts , min.cells = 3, min.features = 0, project = "10X_sample")
 
 print("Sample before filter:")
@@ -22,7 +25,7 @@ sample <- FindVariableFeatures(sample, selection.method = "vst", nfeatures = 200
 sample <- ScaleData(sample)
 sample <- RunPCA(sample, features = VariableFeatures(object = sample), verbose = FALSE)
 sample <- FindNeighbors(sample, dims = 1:10)
-sample <- FindClusters(sample, resolution = cluster_resolution)
+sample <- FindClusters(sample, resolution = as.double(cluster_resolution))
 sample <- RunUMAP(sample, dims = 1:10)
 
 cluster_filename <- paste(iter, 'iters_cluster.txt', sep = '')

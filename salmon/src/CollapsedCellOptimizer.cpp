@@ -1616,11 +1616,11 @@ bool CollapsedCellOptimizer::optimize(EqMapT& fullEqMap,
     }
     
     // run cluster R script
-    std::string script_name{"R/runSeurat.sh"};
+		std::string script_name{aopt.quasic_r_path + "/runSeurat.sh"};
     bool script_fl = check_script_exist(script_name);
     uint32_t script_output = 0;
     if (script_fl) {
-      std::string command = "bash " + script_name + ' ' + std::to_string(cur_iter) + ' ' + aopt.outputDirectory.string() + ' ' + std::to_string(aopt.cluster_resolution);
+      std::string command = "bash " + script_name + ' ' + std::to_string(cur_iter) + ' ' + aopt.outputDirectory.string() + ' ' + std::to_string(aopt.cluster_resolution) + ' ' + aopt.quasic_r_path;
       uint32_t script_output, ret = system(command.c_str());
       script_output = WEXITSTATUS(ret);
       if (script_output != 1) {

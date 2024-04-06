@@ -83,5 +83,5 @@ salmon index -t [transcripts_fasta_path] -i [transcripts_index_name]
 1. Srivastava, A., Malik, L., Smith, T., Sudbery, I. & Patro, R. Alevin efficiently estimates accurate gene abundances from dscRNA-seq data. Genome Biology 20, 65 (2019). https://doi.org/10.1186/s13059-019-1670-y
 2. Patro, R., Duggal, G., Love, M. I., Irizarry, R. A. & Kingsford, C. Salmon provides fast and bias-aware quantification of transcript expression. Nature Methods 14, 417-419 (2017). https://doi.org/10.1038/nmeth.4197
 3. Charlotte Soneson, Michael I Love, Mark D Robinson. Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences. https://pubmed.ncbi.nlm.nih.gov/26925227
-4. Reliable and accurate gene expression quantification with subpopulation structure-aware constraints for single-cell RNA sequencing. https://www.biorxiv.org/content/10.1101/2022.11.08.515740v1
+4. Ching Chih Tu, Jui Hung Hung. Reliable and accurate gene expression quantification with subpopulation structure-aware constraints for single-cell RNA sequencing. https://www.biorxiv.org/content/10.1101/2022.11.08.515740v1
 

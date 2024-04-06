@@ -1,8 +1,10 @@
-readAlevin <- function(files, dropInfReps, filterBarcodes, tierImport, forceSlow, dropMeanVar, em_iter) {
-	cur_dir <- paste("/alevin", em_iter, sep = '') 
+readAlevin <- function(files, dropInfReps, filterBarcodes, tierImport, forceSlow, dropMeanVar, em_iter, r_path) {
+	#cur_dir <- paste("/alevin", em_iter, sep = '') 
+	cur_dir <- paste("/quasic", em_iter, sep = '') 
 	dir <- sub(cur_dir,"",dirname(files))
   barcode.file <- file.path(dir,  paste(cur_dir, "/quants_mat_rows.txt", sep = ''))
-	gene.file <- file.path(dir, paste(cur_dir, "/quants_mat_cols.txt", sep = ''))
+	#gene.file <- file.path(dir, paste(cur_dir, "/quants_mat_cols.txt", sep = ''))
+	gene.file <- file.path(r_path, "quants_mat_genes.txt")
 	matrix.file <- file.path(dir, paste(cur_dir, "/quants_mat.gz", sep = ''))
   tier.file <- file.path(dir, paste(cur_dir, "/quants_tier_mat.gz", sep = ''))
   mean.file <- file.path(dir, paste(cur_dir, "/quants_mean_mat.gz", sep = ''))
@@ -12,6 +14,7 @@ readAlevin <- function(files, dropInfReps, filterBarcodes, tierImport, forceSlow
   whitelist.file <- file.path(dir, paste(cur_dir, "/whitelist.txt", sep = ''))
   for (f in c(barcode.file, gene.file, matrix.file)) {
     if (!file.exists(f)) {
+			print(f)
       stop("expecting 'files' to point to 'quants_mat.gz' file in a directory 'alevin'
   also containing 'quants_mat_rows.txt' and 'quant_mat_cols.txt'.
   please re-run alevin preserving output structure")

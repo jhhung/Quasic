@@ -1284,7 +1284,8 @@ bool GZipWriter::writeSparseAbundances(std::string& bcName,
 #endif
   namespace bfs = boost::filesystem;
 
-  std::string directory_name("alevin");
+  //std::string directory_name("alevin");
+  std::string directory_name("quasic");
   directory_name += std::to_string(cur_iter);
   bfs::path cur_dir = path_ / directory_name;
 
